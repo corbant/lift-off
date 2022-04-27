@@ -28,12 +28,18 @@
 
 	img {
 		width: 100%;
-		height: 100%;
+		height: 40vh;
 	}
 
 	h3 {
 		text-align: center;
 		margin-top: 24px;
 		margin-bottom: 32px;
+	}
+
+	@media (max-height: 420px) {
+		img {
+			display: none;
+		}
 	}
 </style>

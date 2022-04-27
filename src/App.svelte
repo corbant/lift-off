@@ -1,8 +1,9 @@
 <script>
-	import { Header, HeaderUtilities, HeaderAction, SkipToContent, SideNav, SideNavItems, SideNavLink, ProgressIndicator, ProgressStep, TileGroup, RadioTile, HeaderPanelLinks, Content, Theme } from 'carbon-components-svelte'
+	import { Header, HeaderUtilities, HeaderAction, SkipToContent, SideNav, SideNavItems, SideNavLink, ProgressIndicator, ProgressStep, TileGroup, RadioTile, HeaderPanelLinks, Content, Theme, Button } from 'carbon-components-svelte'
 	import { Router, Link, Route } from 'svelte-routing'
-	import Preflight from './routes/Preflight.svelte'
+	import Prelaunch from './routes/Prelaunch.svelte'
 	import Connection from './routes/Connection.svelte'
+	import Launch from './routes/Launch.svelte'
 	import UsbIcon from 'svelte-material-icons/Usb.svelte'
 	import 'carbon-components-svelte/css/all.css'
 
@@ -33,11 +34,11 @@
 					<Link to="/">
 						<ProgressStep complete label="Connection"/>
 					</Link>
-					<Link to="/preflight">
-						<ProgressStep complete label="Preflight"/>
+					<Link to="/prelaunch">
+						<ProgressStep complete label="Prelaunch"/>
 					</Link>
-					<Link to="/">
-						<ProgressStep label="Test 3"/>
+					<Link to="/launch">
+						<ProgressStep label="Launch"/>
 					</Link>
 				</ProgressIndicator>
 			</div>
@@ -45,8 +46,10 @@
 
 		<Content>
 			<Route path="/" component={Connection}/>
-			<Route path="/preflight" component={Preflight} />
+			<Route path="/prelaunch" component={Prelaunch} />
+			<Route path="/launch" component={Launch} />
 		</Content>
+		
 	</Router>
 </main>
 
